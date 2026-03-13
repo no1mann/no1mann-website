@@ -1,0 +1,2 @@
+- All designs should use shared components and update primitive styles as needed to support the design
+- Everything should support mobile/desktop design and dark/light mode

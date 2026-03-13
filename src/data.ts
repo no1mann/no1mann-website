@@ -1,73 +1,179 @@
+const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatDate(date: string): string {
+  const [month, , year] = date.split('/');
+  return `${MONTH_ABBR[parseInt(month, 10) - 1]} ${year}`;
+}
+
+export function formatDateRange(startDate: string, endDate: string | null): string {
+  if (endDate === null) {
+    return `${formatDate(startDate)} – Present`;
+  }
+  return `${formatDate(startDate)} – ${formatDate(endDate)}`;
+}
+
+export function formatConversationDate(date: string): string {
+  const parts = date.split('/');
+
+  if (parts.length < 2) {
+    return date;
+  }
+
+  const [month, , yearFromFullDate] = parts;
+  const year = yearFromFullDate ?? parts[1];
+  const monthIndex = parseInt(month, 10) - 1;
+
+  if (monthIndex < 0 || monthIndex >= MONTH_ABBR.length || !year) {
+    return date;
+  }
+
+  return `${MONTH_ABBR[monthIndex]} ${year}`;
+}
+
 export const PORTFOLIO_DATA = {
   about: {
     name: "Trevor Mann",
-    title: "Software Engineer & Designer",
-    bio: "I build high-performance web applications and design systems. Obsessed with typography, motion, and creating memorable digital experiences. When I'm not coding, I'm exploring the intersection of art and technology.",
+    title: "Co-Founder & Software Architect",
+    primaryProject: "CoverageMap.com",
+    bio: "I build high-performance web applications and design systems that are used by millions of people around the world. I manage teams, mentor engineers, and lead the technical direction of multiple projects.",
+    philosophy: "In this AI world, great software is hard to come by. I believe in shipping fast, iterating relentlessly, and sweating the details that most people never notice but everyone feels.",
   },
+
   skills: [
-    "React / Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Node.js",
-    "Cloudflare Workers",
-    "Framer Motion",
-    "UI/UX Design",
-    "System Architecture"
+    {
+      category: "Frontend",
+      items: ["React", "Next.js", "jQuery", "Vite"],
+    },
+    {
+      category: "Backend",
+      items: ["Node.js", "ASP.NET Core", "Express", "Cloudflare Workers"],
+    },
+    {
+      category: "Data",
+      items: ["PostgreSQL", "ClickHouse", "Redis", "MS SQL Server", "MongoDB", "Cloudflare D1", "Cloudflare Durable Objects"],
+    },
+    {
+      category: "Infrastructure",
+      items: ["Azure", "Cloudflare Workers", "Docker", "GitHub Actions"],
+    },
+    {
+      category: "Tooling",
+      items: ["Git", "GitHub", "Jira", "Azure DevOps"],
+    },
+    {
+      category: "AI",
+      items: ["Cursor", "Codex", "GitHub Copilot"],
+    },
   ],
+
   currentProjects: [
     {
-      title: "Nexus Engine",
-      description: "A real-time collaborative workspace for creative teams.",
-      link: "#"
+      title: "CoverageMap.com",
+      description:
+        "Developing the next generation of cellular coverage maps leveraging the power of crowd-sourcing. With hundreds of thousands of users a month and growing, we help you determine which carrier works best in your area.",
+      tags: ["Co-Founder", "CTO", "Lead Architect"],
+      startDate: "09/22/2022",
+      endDate: null,
+      link: "https://coveragemap.com",
     },
     {
-      title: "Aura UI",
-      description: "An open-source component library focused on accessibility and motion.",
-      link: "#"
-    }
+      title: "Jingle Jam",
+      description:
+        "Raising millions of dollars every year for charity through the power of livestreaming and gaming. I help collect and analyze data from the streams to help the organization make data-driven decisions.",
+      tags: ["Volunteer", "Data Analyst", "Architect"],
+      startDate: "11/01/2022",
+      endDate: null,
+      link: "https://www.jinglejam.co.uk/",
+    },
+    {
+      title: "RDA",
+      description:
+        "A leading consultant for the top companies and organizations in the United States. I lead a team of engineers to develop a technology for Alex Lee, New York Shipping Association, and Kimberly Clark.",
+      tags: ["Architect", "Consultant", "Engineer"],
+      startDate: "07/15/2019",
+      endDate: null,
+      link: "https://www.rdadigital.com/",
+    },
   ],
+
   pastProjects: [
     {
-      title: "FinTech Dashboard",
-      description: "Redesigned the core analytics dashboard for a major fintech startup, improving load times by 40%.",
-      year: "2024"
+      title: "HistoricCellCoverage",
+      description:
+        "A project to help track historical cell coverage of all carriers in the United States.",
+      startDate: "01/01/2022",
+      endDate: "01/01/2023",
+      link: "https://historiccellcoverage.com/",
     },
     {
-      title: "E-commerce Platform",
-      description: "Built a headless Shopify storefront using Next.js and Tailwind.",
-      year: "2023"
+      title: "Guitar Hero Tools",
+      description:
+        "Created free tools for the Guitar Hero fandom to help develop songs, modify charts, and add functionality to the game.",
+      startDate: "01/01/2015",
+      endDate: "01/01/2017",
+      link: "https://github.com/no1mann/GH-Tools-v2.0",
     }
   ],
+
   blog: [
     {
       title: "The Future of Web Typography",
       date: "Oct 12, 2025",
-      excerpt: "Why variable fonts are changing the way we think about responsive design.",
+      excerpt:
+        "Why variable fonts are changing the way we think about responsive design.",
+      readTime: "8 min",
     },
     {
       title: "Building for the Edge",
       date: "Sep 28, 2025",
-      excerpt: "My experience migrating a monolithic application to Cloudflare Workers.",
-    }
-  ],
-  appearances: [
-    {
-      type: "Podcast",
-      title: "Syntax.fm - Modern React Patterns",
-      date: "Nov 2025",
-      link: "#"
+      excerpt:
+        "My experience migrating a monolithic application to Cloudflare Workers.",
+      readTime: "12 min",
     },
     {
-      type: "Interview",
-      title: "Smashing Magazine - Design Systems",
-      date: "Aug 2025",
-      link: "#"
+      title: "Design Tokens Are Not Enough",
+      date: "Aug 15, 2025",
+      excerpt:
+        "Why a token-only approach to design systems creates more problems than it solves, and what to do instead.",
+      readTime: "6 min",
+    },
+    {
+      title: "The Case for Boring Technology",
+      date: "Jul 3, 2025",
+      excerpt:
+        "How choosing well-understood tools over shiny new ones saved our team six months of development time.",
+      readTime: "10 min",
+    },
+    {
+      title: "Accessibility as a Creative Constraint",
+      date: "May 20, 2025",
+      excerpt:
+        "How building for screen readers and keyboard navigation pushed me to write better code and better interfaces.",
+      readTime: "7 min",
+    },
+  ],
+
+  conversations: [
+    {
+      type: "Podcast",
+      title: "LutzTalk Podcast Ep. 5 - CoverageMap.com",
+      guests: ["Stetson Doggett", "Trevor Mann"],
+      name: "LutzTalk",
+      host: "Austin Lutz",
+      description: "Stetson and Trevor join Austin to discuss the future of CoverageMap.com, how we collect and validate speed test data, the future of AI and its impact, our favorite cell phone plan perks, and much more.",
+      date: "03/13/2026",
+      links: [
+        { name: "Spotify", icon: "spotify", link: "https://open.spotify.com/episode/5PLD2rF2fZEs2qGNnLMOJ6  " },
+        { name: "Apple Podcasts", icon: "apple", link: "https://podcasts.apple.com/us/podcast/lutztalk-podcast-ep-5-coveragemap-com/id1870110084?i=1000755121989" }
+      ],
     }
   ],
+
   socials: [
-    { name: "Twitter", link: "https://twitter.com" },
-    { name: "GitHub", link: "https://github.com" },
-    { name: "LinkedIn", link: "https://linkedin.com" },
-    { name: "Dribbble", link: "https://dribbble.com" }
-  ]
+    { name: "Twitter", icon: "twitter", link: "https://twitter.com/no1mann" },
+    { name: "GitHub", icon: "github", link: "https://github.com/no1mann" },
+    { name: "YouTube", icon: "youtube", link: "https://youtube.com/@no1mann" },
+    { name: "Reddit", icon: "reddit", link: "https://reddit.com/u/no1mann" },
+    { name: "Email", icon: "email", link: "mailto:trevor@coveragemap.com" },
+  ],
 };
