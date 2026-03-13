@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 40 20% 96%;
+    --background: 40 20% 94%;
     --foreground: 20 10% 10%;
     --card: 40 20% 96%;
     --card-foreground: 20 10% 10%;
@@ -52,7 +52,7 @@
     --radius: 0;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Space Grotesk', sans-serif;
-    --background: 40 20% 96%;
+    --background: 40 20% 94%;
     --foreground: 20 10% 10%;
   }
 

@@ -79,7 +79,7 @@ export const PORTFOLIO_DATA = {
     {
       title: "Jingle Jam",
       description:
-        "Raising millions of dollars every year for charity through the power of livestreaming and gaming. I help collect and analyze data from the streams to help the organization make data-driven decisions.",
+        "Raising millions of dollars every year for charity through the power of livestreaming and gaming. I help track, collect, and analyze data from the event to help the organization make data-driven decisions.",
       tags: ["Volunteer", "Data Analyst", "Architect"],
       startDate: "11/01/2022",
       endDate: null,

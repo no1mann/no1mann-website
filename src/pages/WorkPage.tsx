@@ -2,6 +2,7 @@ import { PORTFOLIO_DATA, formatDateRange } from '@/data';
 import { SectionTitle } from '@/components/editorial/section-title';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 
 
 export function WorkPage() {
@@ -9,14 +10,14 @@ export function WorkPage() {
 
   return (
     <div>
-      <SectionTitle>Selected Works</SectionTitle>
+      <SectionTitle>Current Projects</SectionTitle>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {currentProjects.map((project) => (
           <article key={project.title} className="group border-b border-foreground/10 pb-8">
             <h3 className="mb-1 font-heading text-2xl font-bold transition-colors group-hover:text-primary">
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-baseline gap-2">
                 {project.title}
-                <span className="ml-1 text-primary transition-transform duration-200 group-hover/link:translate-x-1 inline-block">&rarr;</span>
+                <ArrowRight size={14} className="relative top-[2px] shrink-0 text-primary transition-transform duration-200 group-hover/link:translate-x-1" />
               </a>
             </h3>
             <span className="mb-3 block text-sm italic text-foreground/50">{formatDateRange(project.startDate, project.endDate)}</span>
@@ -41,7 +42,7 @@ export function WorkPage() {
                 <CardTitle>
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-baseline gap-2 transition-colors hover:text-primary">
                     {project.title}
-                    <span className="ml-1 text-primary transition-transform duration-200 group-hover/link:translate-x-1 inline-block">&rarr;</span>
+                    <ArrowRight size={14} className="relative top-[2px] shrink-0 text-primary transition-transform duration-200 group-hover/link:translate-x-1" />
                   </a>
                 </CardTitle>
                 <Badge variant="editorial">{formatDateRange(project.startDate, project.endDate)}</Badge>
