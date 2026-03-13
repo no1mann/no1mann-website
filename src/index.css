@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 96%;
+    --foreground: 20 10% 10%;
+    --card: 40 20% 96%;
+    --card-foreground: 20 10% 10%;
+    --popover: 40 20% 96%;
+    --popover-foreground: 20 10% 10%;
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 85.7% 97.3%;
+    --secondary: 40 15% 91%;
+    --secondary-foreground: 20 10% 10%;
+    --muted: 40 10% 90%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 348 83% 47%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 25 12% 78%;
+    --input: 25 12% 78%;
+    --ring: 348 83% 47%;
+    --radius: 0;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Space Grotesk', sans-serif;
+  }
+
+  .dark {
+    --background: 20 10% 10%;
+    --foreground: 40 20% 96%;
+    --card: 20 10% 10%;
+    --card-foreground: 40 20% 96%;
+    --popover: 20 10% 10%;
+    --popover-foreground: 40 20% 96%;
+    --primary: 348 83% 60%;
+    --primary-foreground: 20 10% 10%;
+    --secondary: 20 10% 15%;
+    --secondary-foreground: 40 20% 96%;
+    --muted: 20 10% 15%;
+    --muted-foreground: 40 12% 70%;
+    --accent: 348 83% 60%;
+    --accent-foreground: 20 10% 10%;
+    --border: 30 12% 30%;
+    --input: 30 12% 30%;
+    --ring: 348 83% 60%;
+  }
+
+  .theme-editorial {
+    --radius: 0;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --background: 40 20% 96%;
+    --foreground: 20 10% 10%;
+  }
+
+  .dark.theme-editorial {
+    --background: 20 10% 10%;
+    --foreground: 40 20% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    text-rendering: geometricPrecision;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
