@@ -37,12 +37,18 @@ export const PORTFOLIO_DATA = {
     title: "Co-Founder & Software Architect",
     headerText: "no1mann",
     bio: "I build high-performance web applications and design systems that are used by millions of people around the world. I manage teams, mentor engineers, and lead the technical direction of multiple projects.",
-    philosophy: "In this AI world, great software is hard to come by. I believe in shipping fast, iterating relentlessly, and sweating the details that most people never notice but everyone feels.",
+    aboutDescription: [
+      "I've always been passionate about technology and building things. I've been coding and building computers since I was 13 years old. The first things I built were CraftBukkit Minecraft plugins for my friends and I to use.",
+      "In college I studied Computer Science and graduated in 2019 with a Bachelor's degree in the field, as well as a Minor in Mathematics.",
+      "Since then I've been building software for over 15 years and I've been building websites for over 7 years. My desire for building the best possible software and creating useful products is what drives me to continue to build and learn.",
+      "I'm currently the Co-Founder, CTO, and Software Architect at CoverageMap.com, where I'm responsible for the technical direction of the company and the development of the software that powers the website. Our mission is to help consumers find the best cellular coverage in their area from all parts of the world.",
+    ],
+    philosophy: "\"In this AI world, great software is hard to come by. I believe in shipping fast, iterating consistently, and ironing out the details that most people never notice but everyone feels.\"",
   },
   skills: [
     {
       category: "Frontend",
-      items: ["React", "Next.js", "jQuery", "Vite"],
+      items: ["React", "Next.js", "Vite", "jQuery"],
     },
     {
       category: "Backend",
@@ -54,7 +60,7 @@ export const PORTFOLIO_DATA = {
     },
     {
       category: "Infrastructure",
-      items: ["Azure", "Cloudflare Workers", "Docker", "GitHub Actions"],
+      items: ["Azure", "Cloudflare", "Docker", "GitHub Actions", "Terraform", "Azure Pipelines"],
     },
     {
       category: "Tooling",
@@ -65,7 +71,6 @@ export const PORTFOLIO_DATA = {
       items: ["Cursor", "Codex", "GitHub Copilot"],
     },
   ],
-
   currentProjects: [
     {
       title: "CoverageMap.com",
@@ -95,7 +100,6 @@ export const PORTFOLIO_DATA = {
       link: "https://www.rdadigital.com/",
     },
   ],
-
   pastProjects: [
     {
       title: "HistoricCellCoverage",
@@ -125,7 +129,6 @@ export const PORTFOLIO_DATA = {
       author: "Trevor Mann",
     }
   ],
-
   conversations: [
     {
       type: "Podcast",
@@ -141,7 +144,6 @@ export const PORTFOLIO_DATA = {
       ],
     }
   ],
-
   socials: [
     { name: "Twitter", icon: "twitter", link: "https://twitter.com/no1mann" },
     { name: "GitHub", icon: "github", link: "https://github.com/no1mann" },
@@ -149,5 +151,8 @@ export const PORTFOLIO_DATA = {
     { name: "Reddit", icon: "reddit", link: "https://reddit.com/u/no1mann" },
     { name: "Discord", icon: "discord", username: "no1mann" },
     { name: "Email", icon: "email", link: "mailto:trevor@coveragemap.com" },
-  ] as const satisfies ReadonlyArray<{ name: string; icon: string; link?: string; username?: string }>,
+  ],
+  repo: {
+    website: "https://github.com/no1mann/no1mann-website"
+  }
 };

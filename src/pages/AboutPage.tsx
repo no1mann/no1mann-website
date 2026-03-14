@@ -18,6 +18,17 @@ export function AboutPage({ workHref }: AboutPageProps) {
           {about.bio}
         </p>
 
+        <div className="mt-12">
+          <SectionTitle>About Me</SectionTitle>
+          <div className="space-y-4">
+            {about.aboutDescription.map((paragraph, i) => (
+              <p key={i} className="text-lg leading-relaxed text-foreground/70">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-16">
           <SectionTitle>Current Work</SectionTitle>
           <ul className="space-y-8">

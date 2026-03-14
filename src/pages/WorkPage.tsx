@@ -38,14 +38,14 @@ export function WorkPage() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {pastProjects.map((project) => (
             <Card key={project.title} className="transition-shadow hover:shadow-lg">
-              <CardHeader className="flex-row items-start justify-between space-y-0 p-6">
+              <CardHeader className="sm:flex-row items-start sm:justify-between sm:space-y-0 gap-2 p-6">
                 <CardTitle>
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-baseline gap-2 transition-colors hover:text-primary">
                     {project.title}
                     <ArrowRight size={14} className="relative top-[2px] shrink-0 text-primary transition-transform duration-200 group-hover/link:translate-x-1" />
                   </a>
                 </CardTitle>
-                <Badge variant="editorial">{formatDateRange(project.startDate, project.endDate)}</Badge>
+                <Badge variant="editorial" className="shrink-0">{formatDateRange(project.startDate, project.endDate)}</Badge>
               </CardHeader>
               <CardContent className="p-6 pt-0">
                 <CardDescription>{project.description}</CardDescription>

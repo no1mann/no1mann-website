@@ -85,7 +85,11 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
               />
             ))}
           </div>
-          <p className="mt-4 font-heading text-xs uppercase tracking-widest text-foreground/40">Published {year}</p>
+          <p className="mt-4 font-heading text-xs uppercase tracking-widest text-foreground/40">
+            Published {year}
+            <span className="mx-2">·</span>
+            <a href={PORTFOLIO_DATA.repo.website} target="_blank" rel="noopener noreferrer" className="underline transition-colors hover:text-foreground/60">Source</a>
+          </p>
         </footer>
       </div>
     </div>
