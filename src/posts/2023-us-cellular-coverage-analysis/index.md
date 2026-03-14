@@ -1,5 +1,7 @@
 On May 21, 2024, the FCC released the latest batch of data for December 31st, 2023 as a part of the FCC's Broadband Data Collection program. With the release of this data, along with the crowdsourced Speed Test data we've collected, we can now paint a unique perspective of the US carriers for the second half of 2023. This report attempts to measure and analyze 2 important aspects of the 5 largest carriers -- coverage and performance.
 
+![U.S. cellular coverage and performance analysis hero image](hero.webp)
+
 ### Summary
 From June 2023 to December 2023, T-Mobile has seen the largest growth in LTE & 5G coverage of all the carriers with an over 1.6% increase. This is attributed mainly to their continued expansion into rural America. Verizon and AT&T have instead focused on investing heavily in upgrading their existing towers to incorporate 5G C-Band. Dish, on the other hand, has drastically slowed down their 5G expansion relative to previous years since they hit their June 2023 FCC coverage mandate.
 
@@ -29,6 +31,7 @@ We then run an internal correction and aggregation algorithm to attempt to norma
 ### Results
 The below table lists the percentage change in coverage among each carrier between 06/30/2023 and 12/31/2023 in 49 US states (omitting Alaska) and including Washington D.C. We ignore Alaska due to its relatively large area and relatively low coverage footprint among all carriers. These values focus on areas of new coverage, not if a carrier is improving tower density by adding towers in already covered areas.
 
+##### Percentage Change in Coverage
 |               | LTE   | 5G          |
 | ------------- | ----- | ----------- |
 | AT&T          | 1.46% | Unavailable |
@@ -36,10 +39,12 @@ The below table lists the percentage change in coverage among each carrier betwe
 | T-Mobile      | 2.35% | 1.66%       |
 | US Cellular   | 0.00% | 0.88%       |
 | Verizon       | 0.00% | 0.70%       |
+
 *Percentage change in coverage from 06/30/2023 to 12/31/2023 of the 49 US states (omitting Alaska) and Washington D.C.*
 
 The tables below compare the median download speeds, upload speeds, and latencies by carrier and technology based on the first and second halves of the year. These values indicate how a network performs, including its speed and reliability. The first half of 2023 refers to tests run from January 1st, 2023 to June 30th, 2023, and the second half of 2023 refers to tests run from July 1st, 2023 to December 31st, 2023.
 
+##### Median Download Speeds
 |             | LTE     |         |        |     | 5G      |         |        |
 | ----------- | ------- | ------- | ------ | --- | ------- | ------- | ------ |
 |             | H1 2023 | H2 2023 | %      |     | H1 2023 | H2 2023 | %      |
@@ -48,8 +53,10 @@ The tables below compare the median download speeds, upload speeds, and latencie
 | T-Mobile    | 33.4    | 31.8    | -4.7%  |     | 228.7   | 248.1   | +8.5%  |
 | US Cellular | 17.7    | 24.6    | +21.8% |     | 29.5    | 51.0    | +72.5% |
 | Verizon     | 36.9    | 33.6    | -9.0%  |     | 154.0   | 187.5   | +21.2% |
-*Median download speeds (in megabits per second) during the first and second halves of 2023 by carrier and technology
 
+*Median download speeds (in megabits per second) during the first and second halves of 2023 by carrier and technology.*
+
+##### Median Upload Speeds
 |             | LTE     |         |       |     | 5G      |         |        |
 | ----------- | ------- | ------- | ----- | --- | ------- | ------- | ------ |
 |             | H1 2023 | H2 2023 | %     |     | H1 2023 | H2 2023 | %      |
@@ -58,8 +65,10 @@ The tables below compare the median download speeds, upload speeds, and latencie
 | T-Mobile    | 5.4     | 5.2     | -3.6% |     | 21.2    | 19.4    | -8.6%  |
 | US Cellular | 5.5     | 5.8     | +5.0% |     | 10.8    | 15.2    | +41.8% |
 | Verizon     | 7.9     | 8.2     | +3.7% |     | 18.0    | 16.8    | -6.5%  |
-*Median upload speeds (in megabits per second) during the first and second halves of 2023 by carrier and technology
 
+*Median upload speeds (in megabits per second) during the first and second halves of 2023 by carrier and technology.*
+
+##### Median Latencies
 |             | LTE     |         |        |     | 5G      |         |        |
 | ----------- | ------- | ------- | ------ | --- | ------- | ------- | ------ |
 |             | H1 2023 | H2 2023 | %      |     | H1 2023 | H2 2023 | %      |
@@ -68,8 +77,10 @@ The tables below compare the median download speeds, upload speeds, and latencie
 | T-Mobile    | 40      | 40      | +0.0%  |     | 28      | 27      | +3.8%  |
 | US Cellular | 69      | 72      | -4.4%  |     | 66      | 57      | +13.6% |
 | Verizon     | 39      | 43      | -10.3% |     | 30      | 31      | -3.3%  |
-*Median latencies (in milliseconds) during the first and second halves of 2023 by carrier and technology
 
+*Median latencies (in milliseconds) during the first and second halves of 2023 by carrier and technology.*
+
+##### Total Number of Speed Tests
 |             | LTE     |         |     | 5G      |         |
 | ----------- | ------- | ------- | --- | ------- | ------- |
 |             | H1 2023 | H2 2023 |     | H1 2023 | H2 2023 |
@@ -78,7 +89,8 @@ The tables below compare the median download speeds, upload speeds, and latencie
 | T-Mobile    | 30,400  | 31,100  |     | 187,900 | 230,100 |
 | US Cellular | 4,800   | 880     |     | 2,400   | 1,400   |
 | Verizon     | 99,400  | 128,100 |     | 131,700 | 217,900 |
-*Total number of speed tests ran in the first and second halves of 2023 by carrier and technology
+
+*Total number of speed tests ran in the first and second halves of 2023 by carrier and technology.*
 
 ### Analysis
 
@@ -97,6 +109,10 @@ For AT&T, we are unable to make a determination about their change in 5G coverag
 Dish saw an increase in their 5G network coverage by 0.98% from the end of June to December 2023. As a result of the T-Mobile/Sprint merger, Dish was required by the FCC to cover 70% of the US population with 5G coverage by June 14, 2023, which they claim to have hit. This means the 0.98% increase comes after they meet their FCC requirements. When we break down the 0.98% coverage increase by state, almost all of it comes from the New England area, with a massive 56.6% coverage increase in Rhode Island and 24.6% increase in Massachusetts. Other states saw very modest improvements, with most having less than a 1.0% increase in coverage in the 6-month period. It's clear that once Dish met their June 2023 requirement, their impressive month-to-month coverage growth that occurred over the past 2 years has slowed down drastically.
 
 ##### LTE - Performance
+![Median LTE download speeds by carrier in H1 and H2 2023](median-lte-download-speeds.webp)
+![Median LTE upload speeds by carrier in H1 and H2 2023](median-lte-upload-speeds.webp)
+![Median LTE latencies by carrier in H1 and H2 2023](median-lte-latencies.webp)
+
 In the second half of 2023, LTE performance dropped for all three primary carriers (except for Verizon's upload speed, which had a slight increase). All three carriers saw a 5% to 10% decline in performance compared to the first half of 2023. This is a trend that has been observed consistently in the United States as more and more devices are added to the networks each year, with per-device usage continually increasing.
 
 According to the CTIA, the United States sees about 30 million new wireless connections added annually. That's around a 5% increase year over year. Ericsson reports that in 2023 alone, data usage per device increased by 6.8 gigabytes per month, rising from 19.1 GB used to 25.9 GB—a whopping 35% increase. This surge in usage causes network congestion, leading to poorer performance for all users. These trends underscore the necessity for 5G adoption and its new spectrum to meet future cellular demand.
@@ -104,6 +120,10 @@ According to the CTIA, the United States sees about 30 million new wireless conn
 Regarding performance results, AT&T leads with the fastest median LTE download speed at 36.2 Mbps, followed closely by Verizon at 33.6 Mbps, and T-Mobile at 31.8 Mbps. For upload speed, Verizon holds its lead with a median LTE upload speed of 8.2 Mbps, with AT&T in second at 6.5 Mbps, and T-Mobile in third at 5.2 Mbps. All 3 carriers see similar latency on their LTE networks, hovering around 40 to 43 milliseconds.
 
 ##### 5G - Performance
+![Median 5G download speeds by carrier in H1 and H2 2023](median-5g-download-speeds.webp)
+![Median 5G upload speeds by carrier in H1 and H2 2023](median-5g-upload-speeds.webp)
+![Median 5G latencies by carrier in H1 and H2 2023](median-5g-latencies.webp)
+
 5G networks have seen significant performance enhancements across all carriers, reflecting the ongoing investment and focus on expanding 5G. The focus on mid-band 5G has had the largest impact on these performance improvements, offering a good balance between coverage and performance. As the carriers deploy more mid-band across the country, 5G performance will continue to grow.
 
 T-Mobile continues to dominate with the highest median 5G download speeds of 248.1 Mbps. This is even while having the smallest percentage increase in speeds among the carriers. These results are not surprising. T-Mobile has the most mature 5G mid-band network, having launched their network a year and half before Verizon and AT&T, as well as having finished upgrading nearly all their towers. This network maturity gives T-Mobile the performance crown, but as a result comes with smaller year-over-year performance increases.

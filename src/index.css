@@ -103,11 +103,19 @@
 }
 
 .editorial-prose h3 {
-  @apply mt-10 mb-4 text-xl md:text-2xl;
+  @apply mt-12 mb-5 text-xl md:text-2xl;
 }
 
 .editorial-prose h4 {
-  @apply mt-8 mb-3 text-lg md:text-xl;
+  @apply mt-10 mb-4 text-lg md:text-xl;
+}
+
+.editorial-prose h5 {
+  @apply mt-8 mb-3 text-base md:text-lg;
+}
+
+.editorial-prose h6 {
+  @apply mt-6 mb-2 text-sm md:text-base;
 }
 
 .editorial-prose p {
@@ -242,8 +250,14 @@
 }
 
 /* Tables */
-.editorial-prose table {
-  @apply my-8 w-full border-collapse text-sm;
+.editorial-prose .editorial-table-wrap {
+  @apply my-8 w-full overflow-x-auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.editorial-prose .editorial-table-wrap > table {
+  @apply my-0 w-full min-w-max border-collapse text-sm;
 }
 
 .editorial-prose thead th {
@@ -259,6 +273,10 @@
   background: hsl(var(--foreground) / 0.03);
 }
 
+.editorial-prose table + p {
+  @apply mt-2 text-sm text-foreground/50;
+}
+
 /* Horizontal rules */
 .editorial-prose hr {
   @apply my-12 border-0 border-t border-foreground/15;
@@ -266,7 +284,8 @@
 
 /* Images */
 .editorial-prose img {
-  @apply my-8 w-full border border-foreground/10;
+  @apply my-8 block w-full border border-foreground/10;
+  border-radius: 0.5rem;
 }
 
 /* Nested list fix */

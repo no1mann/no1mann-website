@@ -25,8 +25,8 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
       <EditorialMetaBar primaryProject={about.primaryProject} isDark={isDark} onToggleTheme={onToggleTheme} />
 
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-        <header className="mb-2 border-foreground/20 pb-16 text-center">
-          <h1 className="mb-6 font-heading text-7xl font-bold tracking-tighter md:text-9xl">
+        <header className="mb-2 border-foreground/20 pb-10 text-center">
+          <h1 className="mb-6 font-heading text-7xl font-bold tracking-tighter md:text-8xl">
             {firstName}
             {lastName ? (
               <>
@@ -44,15 +44,15 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
         </header>
 
         <nav className="mb-16 border-b border-foreground/20">
-          <ul className="flex gap-0">
+          <ul className="flex">
             {TABS.map((tab) => (
-              <li key={tab.label}>
+              <li key={tab.label} className="flex-1 md:flex-initial">
                 <NavLink
                   to={tab.to}
                   end={tab.end}
                   className={({ isActive }) =>
                     [
-                      'relative block px-5 py-3 text-xs font-bold uppercase tracking-widest transition-colors md:px-8 md:py-4 md:text-sm',
+                      'relative block px-2 py-3 text-center text-[10px] font-bold uppercase tracking-wider transition-colors sm:px-5 sm:text-xs sm:tracking-widest md:px-8 md:py-4 md:text-sm md:text-left',
                       isActive
                         ? 'bg-foreground text-background'
                         : 'text-foreground/50 hover:bg-foreground/5 hover:text-foreground/80',

@@ -1,6 +1,6 @@
 const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-function formatDate(date: string): string {
+export function formatDate(date: string): string {
   const [month, , year] = date.split('/');
   return `${MONTH_ABBR[parseInt(month, 10) - 1]} ${year}`;
 }
@@ -38,7 +38,6 @@ export const PORTFOLIO_DATA = {
     bio: "I build high-performance web applications and design systems that are used by millions of people around the world. I manage teams, mentor engineers, and lead the technical direction of multiple projects.",
     philosophy: "In this AI world, great software is hard to come by. I believe in shipping fast, iterating relentlessly, and sweating the details that most people never notice but everyone feels.",
   },
-
   skills: [
     {
       category: "Frontend",
@@ -81,7 +80,7 @@ export const PORTFOLIO_DATA = {
       description:
         "Raising millions of dollars every year for charity through the power of livestreaming and gaming. I help track, collect, and analyze data from the event to help the organization make data-driven decisions.",
       tags: ["Volunteer", "Data Analyst", "Architect"],
-      startDate: "11/01/2022",
+      startDate: "11/17/2022",
       endDate: null,
       link: "https://www.jinglejam.co.uk/",
     },
@@ -117,11 +116,12 @@ export const PORTFOLIO_DATA = {
 
   blog: [
     {
-      title: "Analysis of U.S. Cellular Coverage and Performance in the Second Half of 2023",
+      title: "Analysis of U.S. Cellular Coverage in H2 of 2023",
       slug: "2023-us-cellular-coverage-analysis",
       date: "06/13/2024",
-      excerpt: "A detailed analysis of the coverage and performance of U.S. cellular networks in the second half of 2023.",
+      excerpt: "A detailed analysis of the coverage and performance of the U.S. cellular networks in the second half of 2023.",
       readTime: "15 min",
+      author: "Trevor Mann",
     }
   ],
 
