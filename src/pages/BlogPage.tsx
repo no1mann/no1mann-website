@@ -130,7 +130,7 @@ export function BlogPage() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-6xl">
+    <div className="mx-auto w-full">
       <div className="grid grid-cols-1 gap-0 divide-y divide-foreground/10">
         {blog.map((post) => (
           <BlogListItem key={post.slug} post={post} />

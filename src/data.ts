@@ -32,9 +32,10 @@ export function formatConversationDate(date: string): string {
 
 export const PORTFOLIO_DATA = {
   about: {
+    username: "No1mann",
     name: "Trevor Mann",
     title: "Co-Founder & Software Architect",
-    primaryProject: "CoverageMap.com",
+    headerText: "no1mann",
     bio: "I build high-performance web applications and design systems that are used by millions of people around the world. I manage teams, mentor engineers, and lead the technical direction of multiple projects.",
     philosophy: "In this AI world, great software is hard to come by. I believe in shipping fast, iterating relentlessly, and sweating the details that most people never notice but everyone feels.",
   },
@@ -146,6 +147,7 @@ export const PORTFOLIO_DATA = {
     { name: "GitHub", icon: "github", link: "https://github.com/no1mann" },
     { name: "YouTube", icon: "youtube", link: "https://youtube.com/@no1mann" },
     { name: "Reddit", icon: "reddit", link: "https://reddit.com/u/no1mann" },
+    { name: "Discord", icon: "discord", username: "no1mann" },
     { name: "Email", icon: "email", link: "mailto:trevor@coveragemap.com" },
-  ],
+  ] as const satisfies ReadonlyArray<{ name: string; icon: string; link?: string; username?: string }>,
 };

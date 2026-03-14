@@ -1,12 +1,26 @@
-import type { ComponentType, SVGProps } from 'react';
+import { useState, useEffect, type ComponentType, type SVGProps } from 'react';
+import { createPortal } from 'react-dom';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Moon, Sun, Github, Twitter, Youtube, Mail, Link2 } from 'lucide-react';
+import { Moon, Sun, Github, Twitter, Youtube, Mail, Link2, X, Copy, Check } from 'lucide-react';
 
 function RedditIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" {...props}>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth={0.35}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16.985 13.5a1.447 1.447 0 1 1-2.895 0a1.447 1.447 0 0 1 2.895 0m-8.528 1.447a1.447 1.447 0 1 0 0-2.894a1.447 1.447 0 0 0 0 2.894m.393 1.682a.75.75 0 0 0-.8 1.268l.345.218a6.75 6.75 0 0 0 7.202 0l.345-.217a.75.75 0 1 0-.8-1.27l-.345.218a5.25 5.25 0 0 1-5.602 0z" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M19.96 1.75c-.873 0-1.636.479-2.038 1.188l-3.6-.739a.75.75 0 0 0-.841.442c-.411.966-1.027 2.431-1.542 3.685c-.182.444-.352.863-.495 1.225c-2.047.082-3.943.617-5.494 1.484a3.066 3.066 0 1 0-3.762 4.421c-.132.48-.201.977-.201 1.491c0 2.142 1.209 4.012 3.025 5.317c1.818 1.307 4.29 2.091 6.988 2.091c2.697 0 5.17-.784 6.988-2.09c1.816-1.306 3.025-3.176 3.025-5.318c0-.514-.07-1.012-.2-1.49a3.066 3.066 0 1 0-3.762-4.422c-1.427-.797-3.145-1.314-5.003-1.456c.088-.216.181-.446.28-.684c.418-1.021.906-2.185 1.294-3.103l3.018.62a2.343 2.343 0 1 0 2.32-2.662m-.842 2.342a.842.842 0 1 1 1.685 0a.842.842 0 0 1-1.685 0M12 9.04c.154 0 .307.003.46.009a.621.621 0 0 1-.012.094l-.002.005l.003-.01l.029-.088c2.224.086 4.201.77 5.634 1.8c1.537 1.104 2.401 2.563 2.401 4.098c0 1.536-.865 2.995-2.4 4.1c-1.536 1.102-3.694 1.808-6.113 1.808c-2.419 0-4.577-.706-6.112-1.809c-1.537-1.104-2.401-2.563-2.401-4.099c0-1.535.864-2.994 2.4-4.098C7.424 9.744 9.582 9.039 12 9.039M1.75 10.605a1.566 1.566 0 0 1 2.947-.738c-.799.63-1.463 1.373-1.934 2.204a1.567 1.567 0 0 1-1.013-1.466m19.487 1.466c-.471-.83-1.135-1.575-1.934-2.204a1.566 1.566 0 1 1 1.934 2.204"
+      />
     </svg>
   );
 }
@@ -15,6 +29,27 @@ function SpotifyIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="349 102 123 123" fill="currentColor" stroke="none" {...props}>
       <path d="M413.43 102.851C379.665 101.509 351.207 127.791 349.87 161.556C348.528 195.321 374.817 223.773 408.576 225.115C442.34 226.457 470.793 200.175 472.135 166.41C473.471 132.645 447.189 104.187 413.43 102.851ZM439.254 192.48C438.493 193.822 437.011 194.493 435.568 194.292C435.127 194.23 434.685 194.085 434.271 193.85C426.185 189.248 417.372 186.251 408.078 184.942C398.784 183.633 389.484 184.086 380.442 186.284C378.479 186.759 376.505 185.557 376.03 183.594C375.555 181.632 376.757 179.658 378.72 179.182C388.662 176.766 398.885 176.269 409.096 177.706C419.307 179.143 428.992 182.437 437.889 187.498C439.639 188.499 440.255 190.724 439.259 192.48H439.254ZM447.295 176.42C446.048 178.724 443.162 179.585 440.858 178.338C431.397 173.221 421.152 169.86 410.41 168.35C399.668 166.841 388.897 167.249 378.39 169.558C377.819 169.681 377.255 169.704 376.707 169.625C374.8 169.357 373.167 167.937 372.731 165.94C372.166 163.379 373.788 160.846 376.349 160.281C387.963 157.726 399.869 157.273 411.735 158.939C423.596 160.605 434.92 164.319 445.377 169.978C447.686 171.225 448.542 174.105 447.295 176.414V176.42ZM456.209 158.313C455.034 160.572 452.591 161.741 450.208 161.405C449.565 161.316 448.933 161.114 448.324 160.801C437.308 155.069 425.441 151.284 413.055 149.544C400.669 147.805 388.215 148.174 376.047 150.646C372.882 151.289 369.8 149.242 369.157 146.083C368.514 142.918 370.561 139.837 373.721 139.194C387.197 136.459 400.976 136.051 414.682 137.975C428.388 139.898 441.518 144.092 453.72 150.439C456.583 151.927 457.696 155.455 456.209 158.318V158.313Z" />
+    </svg>
+  );
+}
+
+function DiscordIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+      <g fill="currentColor">
+        <circle cx="9" cy="12" r="1.5" />
+        <circle cx="15" cy="12" r="1.5" />
+      </g>
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+      >
+        <path d="M15.5 17.5L16.5 19.5C16.5 19.5 20.671 18.172 22 16C22 15 22.53 7.853 19 5.5C17.5 4.5 15 4 15 4L14 6H12M8.52799 17.5L7.52799 19.5C7.52799 19.5 3.35699 18.172 2.02799 16C2.02799 15 1.49799 7.853 5.02799 5.5C6.52799 4.5 9.02799 4 9.02799 4L10.028 6H12.028" />
+        <path d="M5.5 16C10.5 18.5 13.5 18.5 18.5 16" />
+      </g>
     </svg>
   );
 }
@@ -41,23 +76,104 @@ export const SOCIAL_ICON_MAP: Record<string, IconComponent> = {
     return <SpotifyIcon width={adjustedSize} height={adjustedSize} {...props} />;
   },
   apple: ({ size, ...props }) => <AppleIcon width={size} height={size} {...props} />,
+  discord: ({ size, ...props }) => <DiscordIcon width={size} height={size} {...props} />,
   email: Mail,
   website: Link2,
 };
 
+type UsernameModalProps = {
+  name: string;
+  icon: string;
+  username: string;
+  onClose: () => void;
+};
+
+function UsernameModal({ name, icon, username, onClose }: UsernameModalProps) {
+  const [copied, setCopied] = useState(false);
+  const Icon = SOCIAL_ICON_MAP[icon];
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [onClose]);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(username);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div
+        className="relative border border-foreground/20 bg-background px-10 py-8 text-center shadow-lg"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute right-3 top-3 text-foreground/50 transition-colors hover:text-foreground"
+          aria-label="Close"
+        >
+          <X size={16} />
+        </button>
+        {Icon && <Icon size={32} className="mx-auto mb-4 text-primary" />}
+        <p className="mb-1 text-xs uppercase tracking-widest text-foreground/50">{name}</p>
+        <p className="font-heading text-2xl font-bold tracking-tight">{username}</p>
+        <button
+          onClick={handleCopy}
+          className="mt-5 inline-flex items-center gap-2 border border-foreground/20 px-4 py-2 text-xs uppercase tracking-widest transition-colors hover:bg-foreground/5"
+        >
+          {copied ? <><Check size={14} /> Copied</> : <><Copy size={14} /> Copy Username</>}
+        </button>
+      </div>
+    </div>,
+    document.body,
+  );
+}
+
 type EditorialSocialIconLinkProps = {
   name: string;
   icon: string;
-  link: string;
+  link?: string;
+  username?: string;
   size?: number;
   className?: string;
 };
 
-export function EditorialSocialIconLink({ name, icon, link, size = 20, className = '' }: EditorialSocialIconLinkProps) {
+export function EditorialSocialIconLink({ name, icon, link, username, size = 20, className = '' }: EditorialSocialIconLinkProps) {
+  const [showModal, setShowModal] = useState(false);
   const Icon = SOCIAL_ICON_MAP[icon];
-  if (!Icon) {
-    return null;
+  if (!Icon) return null;
+
+  if (username) {
+    return (
+      <>
+        <button
+          onClick={() => setShowModal(true)}
+          aria-label={name}
+          title={name}
+          className={`text-primary transition-opacity hover:opacity-70 ${className}`.trim()}
+        >
+          <Icon size={size} />
+          <span className="sr-only">{name}</span>
+        </button>
+        {showModal && (
+          <UsernameModal
+            name={name}
+            icon={icon}
+            username={username}
+            onClose={() => setShowModal(false)}
+          />
+        )}
+      </>
+    );
   }
+
+  if (!link) return null;
 
   const isExternalLink = link.startsWith('http');
 
@@ -76,15 +192,15 @@ export function EditorialSocialIconLink({ name, icon, link, size = 20, className
 }
 
 type EditorialMetaBarProps = {
-  primaryProject: string;
+  headerText: string;
   isDark: boolean;
   onToggleTheme: () => void;
 };
 
-export function EditorialMetaBar({ primaryProject, isDark, onToggleTheme }: EditorialMetaBarProps) {
+export function EditorialMetaBar({ headerText, isDark, onToggleTheme }: EditorialMetaBarProps) {
   return (
     <div className="flex items-center justify-between border-b border-foreground/20 px-4 py-2 text-xs uppercase tracking-widest md:px-8">
-      <span>{primaryProject}</span>
+      <span>{headerText}</span>
       <div className="flex items-center gap-3">
         <Button
           variant="ghost"

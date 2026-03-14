@@ -22,7 +22,7 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
-      <EditorialMetaBar primaryProject={about.primaryProject} isDark={isDark} onToggleTheme={onToggleTheme} />
+      <EditorialMetaBar headerText={about.headerText} isDark={isDark} onToggleTheme={onToggleTheme} />
 
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
         <header className="mb-2 border-foreground/20 pb-10 text-center">
@@ -37,8 +37,11 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
           </h1>
           <p className="mx-auto max-w-2xl font-heading text-xl italic text-foreground/80 md:text-2xl">{about.title}</p>
           <div className="mt-6 flex items-center justify-center gap-4">
+            <span className="font-body text-sm tracking-widest text-foreground/50 lowercase pr-2 border-r border-foreground/20">
+              @{about.username}
+            </span>
             {PORTFOLIO_DATA.socials.map((social) => (
-              <EditorialSocialIconLink key={social.name} name={social.name} icon={social.icon} link={social.link} />
+              <EditorialSocialIconLink key={social.name} {...social} />
             ))}
           </div>
         </header>
@@ -52,7 +55,7 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
                   end={tab.end}
                   className={({ isActive }) =>
                     [
-                      'relative block px-2 py-3 text-center text-[10px] font-bold uppercase tracking-wider transition-colors sm:px-5 sm:text-xs sm:tracking-widest md:px-8 md:py-4 md:text-sm md:text-left',
+                      'relative block px-2 py-3 text-center font-body text-sm font-medium transition-colors sm:px-5 md:px-8 md:py-4 md:text-left uppercase',
                       isActive
                         ? 'bg-foreground text-background'
                         : 'text-foreground/50 hover:bg-foreground/5 hover:text-foreground/80',
@@ -76,9 +79,7 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
             {PORTFOLIO_DATA.socials.map((social) => (
               <EditorialSocialIconLink
                 key={`footer-${social.name}`}
-                name={social.name}
-                icon={social.icon}
-                link={social.link}
+                {...social}
                 size={18}
                 className="text-foreground/65 transition-colors hover:text-primary"
               />
