@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@reference "tailwindcss";
 
 @layer base {
   :root {
@@ -82,11 +82,12 @@
   }
 }
 
-/* Editorial prose — markdown rendered blog posts */
-.editorial-prose {
-  @apply max-w-3xl text-base leading-relaxed text-foreground/85;
-  font-family: var(--font-body);
-}
+@layer components {
+  /* Editorial prose — markdown rendered blog posts */
+  .editorial-prose {
+    @apply max-w-3xl text-base leading-relaxed text-foreground/85;
+    font-family: var(--font-body);
+  }
 
 .editorial-prose h1,
 .editorial-prose h2,
@@ -294,7 +295,8 @@
   @apply mt-2 mb-0;
 }
 
-/* Delete / strikethrough (GFM) */
-.editorial-prose del {
-  @apply text-foreground/40 line-through;
+  /* Delete / strikethrough (GFM) */
+  .editorial-prose del {
+    @apply text-foreground/40 line-through;
+  }
 }

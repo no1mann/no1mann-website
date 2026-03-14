@@ -14,7 +14,7 @@ export function AboutPage({ workHref }: AboutPageProps) {
   return (
     <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
       <section className="md:col-span-8">
-        <p className="border-l-4 border-accent pl-5 font-heading text-2xl leading-relaxed md:pl-6 md:text-3xl">
+        <p className="border-l-4 border-accent pl-5 font-heading text-2xl leading-[1.38] md:pl-6 md:text-3xl md:leading-[1.34]">
           {about.bio}
         </p>
 
