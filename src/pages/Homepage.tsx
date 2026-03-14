@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import { PORTFOLIO_DATA } from '@/data';
 import { EditorialMetaBar, EditorialSocialIconLink } from '@/components/editorial/primitives';
-import { AboutPage } from '@/pages/AboutPage';
-import { WorkPage } from '@/pages/WorkPage';
-import { BlogPage } from '@/pages/BlogPage';
-import { ConversationsPage } from '@/pages/ConversationsPage';
 
-const TABS = ['About', 'Work', 'Blog', 'Conversations'] as const;
-type Tab = (typeof TABS)[number];
+const TABS = [
+  { label: 'About', to: '/', end: true },
+  { label: 'Work', to: '/work', end: true },
+  { label: 'Blog', to: '/blog', end: false },
+  { label: 'Conversations', to: '/conversations', end: true },
+] as const;
 
 type HomepageProps = {
   isDark: boolean;
@@ -15,7 +15,6 @@ type HomepageProps = {
 };
 
 export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
-  const [activeTab, setActiveTab] = useState<Tab>('About');
   const { about } = PORTFOLIO_DATA;
   const [firstName, ...lastNameParts] = about.name.split(' ');
   const lastName = lastNameParts.join(' ');
@@ -47,34 +46,44 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
         <nav className="mb-16 border-b border-foreground/20">
           <ul className="flex gap-0">
             {TABS.map((tab) => (
-              <li key={tab}>
-                <button
-                  onClick={() => setActiveTab(tab)}
-                  className={`
-                    relative px-5 py-3 text-xs font-bold uppercase tracking-widest transition-colors
-                    md:px-8 md:py-4 md:text-sm
-                    ${activeTab === tab
-                      ? 'bg-foreground text-background'
-                      : 'text-foreground/50 hover:bg-foreground/5 hover:text-foreground/80'
-                    }
-                  `}
+              <li key={tab.label}>
+                <NavLink
+                  to={tab.to}
+                  end={tab.end}
+                  className={({ isActive }) =>
+                    [
+                      'relative block px-5 py-3 text-xs font-bold uppercase tracking-widest transition-colors md:px-8 md:py-4 md:text-sm',
+                      isActive
+                        ? 'bg-foreground text-background'
+                        : 'text-foreground/50 hover:bg-foreground/5 hover:text-foreground/80',
+                    ].join(' ')
+                  }
                 >
-                  {tab}
-                </button>
+                  {tab.label}
+                </NavLink>
               </li>
             ))}
           </ul>
         </nav>
 
         <div className="min-h-[60vh]">
-          {activeTab === 'About' && <AboutPage onNavigateToWork={() => setActiveTab('Work')} />}
-          {activeTab === 'Work' && <WorkPage />}
-          {activeTab === 'Blog' && <BlogPage />}
-          {activeTab === 'Conversations' && <ConversationsPage />}
+          <Outlet />
         </div>
 
         <footer className="mt-32 border-t border-foreground/20 pt-8 text-center">
           <p className="mx-auto max-w-3xl text-sm text-foreground/60">{about.philosophy}</p>
+          <div className="mt-6 flex items-center justify-center gap-4">
+            {PORTFOLIO_DATA.socials.map((social) => (
+              <EditorialSocialIconLink
+                key={`footer-${social.name}`}
+                name={social.name}
+                icon={social.icon}
+                link={social.link}
+                size={18}
+                className="text-foreground/65 transition-colors hover:text-primary"
+              />
+            ))}
+          </div>
           <p className="mt-4 font-heading text-xs uppercase tracking-widest text-foreground/40">Published {year}</p>
         </footer>
       </div>

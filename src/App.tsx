@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Homepage } from './pages/Homepage';
+import { AboutPage } from './pages/AboutPage';
+import { WorkPage } from './pages/WorkPage';
+import { BlogPage } from './pages/BlogPage';
+import { ConversationsPage } from './pages/ConversationsPage';
 
 const THEME_STORAGE_KEY = 'theme-preference';
 
@@ -19,6 +24,16 @@ function getInitialThemePreference() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   const [isDark, setIsDark] = useState(getInitialThemePreference);
 
@@ -32,7 +47,20 @@ function App() {
 
   return (
     <div className="min-h-screen w-full transition-colors duration-300">
-      <Homepage isDark={isDark} onToggleTheme={() => setIsDark((previous) => !previous)} />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Homepage isDark={isDark} onToggleTheme={() => setIsDark((previous) => !previous)} />}>
+          <Route index element={<AboutPage workHref="/work" />} />
+          <Route path="about" element={<Navigate to="/" replace />} />
+          <Route path="work" element={<WorkPage />} />
+          <Route path="blog">
+            <Route index element={<BlogPage />} />
+            <Route path=":slug" element={<BlogPage />} />
+          </Route>
+          <Route path="conversations" element={<ConversationsPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

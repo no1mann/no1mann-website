@@ -81,3 +81,201 @@
     font-family: var(--font-heading);
   }
 }
+
+/* Editorial prose — markdown rendered blog posts */
+.editorial-prose {
+  @apply max-w-3xl text-base leading-relaxed text-foreground/85;
+  font-family: var(--font-body);
+}
+
+.editorial-prose h1,
+.editorial-prose h2,
+.editorial-prose h3,
+.editorial-prose h4,
+.editorial-prose h5,
+.editorial-prose h6 {
+  font-family: var(--font-heading);
+  @apply font-bold leading-tight text-foreground;
+}
+
+.editorial-prose h2 {
+  @apply mt-14 mb-5 border-b border-foreground/15 pb-3 text-2xl md:text-3xl;
+}
+
+.editorial-prose h3 {
+  @apply mt-10 mb-4 text-xl md:text-2xl;
+}
+
+.editorial-prose h4 {
+  @apply mt-8 mb-3 text-lg md:text-xl;
+}
+
+.editorial-prose p {
+  @apply mb-6;
+}
+
+.editorial-prose strong {
+  @apply font-bold text-foreground;
+}
+
+.editorial-prose em {
+  @apply italic;
+}
+
+.editorial-prose a {
+  @apply text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:decoration-primary;
+}
+
+/* Lists */
+.editorial-prose ul {
+  @apply mb-6 ml-1 space-y-2 pl-6;
+  list-style-type: none;
+}
+
+.editorial-prose ul > li {
+  @apply relative pl-2;
+}
+
+.editorial-prose ul > li::before {
+  content: '';
+  @apply absolute top-[0.6em] left-[-1em] h-1.5 w-1.5 rounded-full bg-primary;
+}
+
+.editorial-prose ol {
+  @apply mb-6 ml-1 list-decimal space-y-2 pl-6;
+}
+
+.editorial-prose ol > li {
+  @apply pl-1;
+}
+
+.editorial-prose ol > li::marker {
+  @apply text-primary font-bold;
+}
+
+/* Task lists (GFM) */
+.editorial-prose ul.contains-task-list {
+  @apply space-y-2 pl-0;
+  list-style-type: none;
+}
+
+.editorial-prose ul.contains-task-list > li {
+  @apply pl-0;
+}
+
+.editorial-prose ul.contains-task-list > li::before {
+  display: none;
+}
+
+.editorial-prose input[type='checkbox'] {
+  @apply mr-2 accent-primary;
+}
+
+/* Blockquotes */
+.editorial-prose blockquote {
+  @apply my-8 border-l-4 border-primary py-1 pl-6 italic text-foreground/70;
+  font-family: var(--font-heading);
+}
+
+.editorial-prose blockquote p {
+  @apply mb-0 text-lg md:text-xl leading-relaxed;
+}
+
+/* Code */
+.editorial-prose code {
+  @apply rounded px-1.5 py-0.5 text-[0.85em] text-foreground/90;
+  background: hsl(var(--foreground) / 0.08);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+.editorial-prose pre {
+  @apply my-8 overflow-x-auto border border-foreground/10 p-5;
+}
+
+.editorial-prose pre code {
+  @apply bg-transparent p-0 text-sm leading-relaxed;
+}
+
+/* Highlight.js overrides to match editorial theme */
+.editorial-prose pre .hljs {
+  @apply bg-transparent text-foreground/80;
+}
+
+.editorial-prose .hljs-keyword,
+.editorial-prose .hljs-selector-tag,
+.editorial-prose .hljs-built_in {
+  color: hsl(var(--primary));
+}
+
+.editorial-prose .hljs-string,
+.editorial-prose .hljs-attr {
+  color: hsl(var(--primary) / 0.75);
+}
+
+.editorial-prose .hljs-comment,
+.editorial-prose .hljs-quote {
+  @apply italic text-foreground/40;
+}
+
+.editorial-prose .hljs-number,
+.editorial-prose .hljs-literal {
+  color: hsl(348 83% 55%);
+}
+
+.editorial-prose .hljs-title,
+.editorial-prose .hljs-section {
+  @apply font-bold text-foreground;
+}
+
+.editorial-prose .hljs-type,
+.editorial-prose .hljs-name {
+  color: hsl(var(--primary) / 0.85);
+}
+
+.editorial-prose .hljs-variable,
+.editorial-prose .hljs-template-variable {
+  @apply text-foreground/70;
+}
+
+.editorial-prose .hljs-meta {
+  @apply text-foreground/50;
+}
+
+/* Tables */
+.editorial-prose table {
+  @apply my-8 w-full border-collapse text-sm;
+}
+
+.editorial-prose thead th {
+  @apply border-b-2 border-foreground/20 px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-foreground/60;
+  font-family: var(--font-body);
+}
+
+.editorial-prose tbody td {
+  @apply border-b border-foreground/10 px-4 py-3;
+}
+
+.editorial-prose tbody tr:hover {
+  background: hsl(var(--foreground) / 0.03);
+}
+
+/* Horizontal rules */
+.editorial-prose hr {
+  @apply my-12 border-0 border-t border-foreground/15;
+}
+
+/* Images */
+.editorial-prose img {
+  @apply my-8 w-full border border-foreground/10;
+}
+
+/* Nested list fix */
+.editorial-prose li > ul,
+.editorial-prose li > ol {
+  @apply mt-2 mb-0;
+}
+
+/* Delete / strikethrough (GFM) */
+.editorial-prose del {
+  @apply text-foreground/40 line-through;
+}

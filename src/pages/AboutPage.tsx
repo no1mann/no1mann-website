@@ -1,13 +1,14 @@
 import { PORTFOLIO_DATA, formatDateRange } from '@/data';
+import { Link } from 'react-router-dom';
 import { SectionTitle } from '@/components/editorial/section-title';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
 
 type AboutPageProps = {
-  onNavigateToWork?: () => void;
+  workHref?: string;
 };
 
-export function AboutPage({ onNavigateToWork }: AboutPageProps) {
+export function AboutPage({ workHref }: AboutPageProps) {
   const { about, skills, currentProjects } = PORTFOLIO_DATA;
 
   return (
@@ -42,13 +43,13 @@ export function AboutPage({ onNavigateToWork }: AboutPageProps) {
               </li>
             ))}
           </ul>
-          {onNavigateToWork && (
-            <button
-              onClick={onNavigateToWork}
-              className="mt-6 font-heading text-sm italic text-primary transition-opacity hover:opacity-70"
+          {workHref && (
+            <Link
+              to={workHref}
+              className="mt-6 inline-block font-heading text-sm italic text-primary transition-opacity hover:opacity-70"
             >
               View all work &rarr;
-            </button>
+            </Link>
           )}
         </div>
 

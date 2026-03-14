@@ -117,40 +117,12 @@ export const PORTFOLIO_DATA = {
 
   blog: [
     {
-      title: "The Future of Web Typography",
-      date: "Oct 12, 2025",
-      excerpt:
-        "Why variable fonts are changing the way we think about responsive design.",
-      readTime: "8 min",
-    },
-    {
-      title: "Building for the Edge",
-      date: "Sep 28, 2025",
-      excerpt:
-        "My experience migrating a monolithic application to Cloudflare Workers.",
-      readTime: "12 min",
-    },
-    {
-      title: "Design Tokens Are Not Enough",
-      date: "Aug 15, 2025",
-      excerpt:
-        "Why a token-only approach to design systems creates more problems than it solves, and what to do instead.",
-      readTime: "6 min",
-    },
-    {
-      title: "The Case for Boring Technology",
-      date: "Jul 3, 2025",
-      excerpt:
-        "How choosing well-understood tools over shiny new ones saved our team six months of development time.",
-      readTime: "10 min",
-    },
-    {
-      title: "Accessibility as a Creative Constraint",
-      date: "May 20, 2025",
-      excerpt:
-        "How building for screen readers and keyboard navigation pushed me to write better code and better interfaces.",
-      readTime: "7 min",
-    },
+      title: "Analysis of U.S. Cellular Coverage and Performance in the Second Half of 2023",
+      slug: "2023-us-cellular-coverage-analysis",
+      date: "06/13/2024",
+      excerpt: "A detailed analysis of the coverage and performance of U.S. cellular networks in the second half of 2023.",
+      readTime: "15 min",
+    }
   ],
 
   conversations: [
