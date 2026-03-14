@@ -93,7 +93,7 @@ export const PORTFOLIO_DATA = {
     {
       title: "RDA",
       description:
-        "A leading consultant for the top companies and organizations in the United States. I lead a team of engineers to develop a technology for Alex Lee, New York Shipping Association, and Kimberly Clark.",
+        "A leading consultant for the top companies and organizations in the United States. I lead teams of engineers to develop technologies for Alex Lee, New York Shipping Association, and Kimberly Clark.",
       tags: ["Architect", "Consultant", "Engineer"],
       startDate: "07/15/2019",
       endDate: null,
