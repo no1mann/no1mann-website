@@ -8,7 +8,6 @@ export function ConversationsPage() {
 
   return (
     <div>
-      <SectionTitle>Talks, Podcasts & Interviews</SectionTitle>
       <div className="space-y-10">
         {conversations.map((item) => {
           const primaryLink = item.links[0]?.link;

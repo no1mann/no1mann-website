@@ -10,7 +10,6 @@ export function WorkPage() {
 
   return (
     <div>
-      <SectionTitle>Current Projects</SectionTitle>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {currentProjects.map((project) => (
           <article key={project.title} className="group border-b border-foreground/10 pb-8">
@@ -34,7 +33,7 @@ export function WorkPage() {
       </div>
 
       <div className="mt-20">
-        <SectionTitle>Archive</SectionTitle>
+        <SectionTitle>Past Projects</SectionTitle>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {pastProjects.map((project) => (
             <Card key={project.title} className="transition-shadow hover:shadow-lg">

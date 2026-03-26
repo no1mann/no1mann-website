@@ -66,7 +66,7 @@ export function AboutPage({ workHref }: AboutPageProps) {
 
       </section>
 
-      <aside className="space-y-16 border-t border-foreground/20 pt-12 md:col-span-4 md:border-l md:border-t-0 md:pl-12 md:pt-0">
+      <aside className="space-y-16 pt-12 md:col-span-4 md:border-l md:border-foreground/20 md:pl-12 md:pt-0">
         <div>
           <SectionTitle>Expertise</SectionTitle>
           <div className="space-y-8">

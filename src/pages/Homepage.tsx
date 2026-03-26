@@ -25,7 +25,7 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
       <EditorialMetaBar headerText={about.headerText} isDark={isDark} onToggleTheme={onToggleTheme} />
 
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-        <header className="mb-2 border-foreground/20 pb-10 text-center">
+        <header className="mb-2 border-foreground/20 pb-8 text-center">
           <h1 className="mb-6 font-heading text-7xl font-bold tracking-tighter md:text-8xl">
             {firstName}
             {lastName ? (
@@ -36,7 +36,7 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
             ) : null}
           </h1>
           <p className="mx-auto max-w-2xl font-heading text-xl italic text-foreground/80 md:text-2xl">{about.title}</p>
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-3 flex items-center justify-center gap-4">
             <span className="font-body text-sm tracking-widest text-foreground/50 lowercase pr-2 border-r border-foreground/20">
               @{about.username}
             </span>
@@ -46,27 +46,29 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
           </div>
         </header>
 
-        <nav className="mb-16 border-b border-foreground/20">
-          <ul className="flex">
-            {TABS.map((tab) => (
-              <li key={tab.label} className="flex-1 md:flex-initial">
-                <NavLink
-                  to={tab.to}
-                  end={tab.end}
-                  className={({ isActive }) =>
-                    [
-                      'relative block px-2 py-3 text-center font-body text-sm font-medium transition-colors sm:px-5 md:px-8 md:py-4 md:text-left uppercase',
-                      isActive
-                        ? 'bg-foreground text-background'
-                        : 'text-foreground/50 hover:bg-foreground/5 hover:text-foreground/80',
-                    ].join(' ')
-                  }
-                >
-                  {tab.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+        <nav className="mb-10 border-b border-foreground/20">
+          <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
+            <ul className="mx-auto flex w-max min-w-fit">
+              {TABS.map((tab) => (
+                <li key={tab.label} className="shrink-0">
+                  <NavLink
+                    to={tab.to}
+                    end={tab.end}
+                    className={({ isActive }) =>
+                      [
+                        'relative block px-3.5 py-3 text-center font-body text-[13px] font-medium uppercase tracking-wide transition-colors sm:px-6 sm:text-sm md:px-8 md:py-4 md:text-left',
+                        isActive
+                          ? 'bg-foreground text-background'
+                          : 'text-foreground/50 hover:bg-foreground/5 hover:text-foreground/80',
+                      ].join(' ')
+                    }
+                  >
+                    {tab.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
 
         <div className="min-h-[60vh]">
