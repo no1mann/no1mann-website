@@ -31,7 +31,7 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
             {lastName ? (
               <>
                 <br className="md:hidden" />
-                <span className="ml-4 font-light italic text-primary">{lastName}</span>
+                <span className="block md:inline md:ml-4 font-light italic text-primary">{lastName}</span>
               </>
             ) : null}
           </h1>

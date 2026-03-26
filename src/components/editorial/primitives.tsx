@@ -56,10 +56,14 @@ function DiscordIcon(props: SVGProps<SVGSVGElement>) {
 
 function AppleIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" {...props}>
-      <g transform="translate(12 12) scale(1.3) translate(-12 -12)">
-        <path d="M16.95 12.13c.02 2.14 1.9 2.86 1.92 2.87-.02.05-.3 1.02-.98 2.02-.58.85-1.19 1.69-2.14 1.7-.93.02-1.24-.55-2.31-.55-1.08 0-1.42.53-2.28.57-.9.03-1.59-.9-2.18-1.74-1.2-1.73-2.11-4.9-.88-7.03a3.32 3.32 0 0 1 2.8-1.7c.87-.02 1.7.58 2.29.58.6 0 1.7-.71 2.86-.61.49.02 1.87.2 2.75 1.49-.07.04-1.64.95-1.63 2.4zm-1.88-5.03c.48-.58.8-1.39.71-2.2-.69.03-1.52.46-2.01 1.04-.44.52-.83 1.34-.73 2.13.77.06 1.55-.39 2.03-.97z" />
-      </g>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="4 2 16.2 20"
+      fill="currentColor"
+      stroke="none"
+      {...props}
+    >
+      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
     </svg>
   );
 }
@@ -72,10 +76,13 @@ export const SOCIAL_ICON_MAP: Record<string, IconComponent> = {
   youtube: Youtube,
   reddit: ({ size, ...props }) => <RedditIcon width={size} height={size} {...props} />,
   spotify: ({ size, ...props }) => {
-    const adjustedSize = typeof size === 'number' ? size * 0.88 : size;
+    const adjustedSize = typeof size === 'number' ? size * 0.9 : size;
     return <SpotifyIcon width={adjustedSize} height={adjustedSize} {...props} />;
   },
-  apple: ({ size, ...props }) => <AppleIcon width={size} height={size} {...props} />,
+  apple: ({ size, ...props }) => {
+    const adjustedSize = typeof size === 'number' ? size * 0.9 : size;
+    return <AppleIcon width={adjustedSize} height={adjustedSize} {...props} />;
+  },
   discord: ({ size, ...props }) => <DiscordIcon width={size} height={size} {...props} />,
   email: Mail,
   website: Link2,
@@ -156,9 +163,9 @@ export function EditorialSocialIconLink({ name, icon, link, username, size = 20,
           onClick={() => setShowModal(true)}
           aria-label={name}
           title={name}
-          className={`text-primary transition-opacity hover:opacity-70 ${className}`.trim()}
+          className={`cursor-pointer text-primary transition-opacity hover:opacity-70 ${className}`.trim()}
         >
-          <Icon size={size} />
+          <Icon size={size} className="block" />
           <span className="sr-only">{name}</span>
         </button>
         {showModal && (
@@ -183,9 +190,9 @@ export function EditorialSocialIconLink({ name, icon, link, username, size = 20,
       {...(isExternalLink ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       aria-label={name}
       title={name}
-      className={`text-primary transition-opacity hover:opacity-70 ${className}`.trim()}
+      className={`cursor-pointer text-primary transition-opacity hover:opacity-70 ${className}`.trim()}
     >
-      <Icon size={size} />
+      <Icon size={size} className="block" />
       <span className="sr-only">{name}</span>
     </a>
   );

@@ -43,7 +43,7 @@ export const PORTFOLIO_DATA = {
       "Since then I've been building software for over 15 years and I've been building websites for over 7 years. My desire for building the best possible software and creating useful products is what drives me to continue to build and learn.",
       "I'm currently the Co-Founder, CTO, and Software Architect at CoverageMap.com, where I'm responsible for the technical direction of the company and the development of the software that powers the website. Our mission is to help consumers find the best cellular coverage in their area from all parts of the world.",
     ],
-    philosophy: "\"In this AI world, great software is hard to come by. I believe in shipping fast, iterating consistently, and ironing out the details that most people never notice but everyone feels.\"",
+    philosophy: "\"In this AI world, great software is hard to come by. I believe in ironing out the details that most people never notice but everyone feels.\"",
   },
   skills: [
     {
@@ -84,7 +84,7 @@ export const PORTFOLIO_DATA = {
     {
       title: "Jingle Jam",
       description:
-        "Raising millions of dollars every year for charity through the power of livestreaming and gaming. I help track, collect, and analyze data from the event to help the organization make data-driven decisions.",
+        "Raising millions of dollars every year for multiple charities through the power of livestreaming and gaming. I help track, collect, and analyze the data to help the Jingle Jam make data-driven decisions and raise even more money.",
       tags: ["Volunteer", "Data Analyst", "Developer"],
       startDate: "11/17/2022",
       endDate: null,
@@ -93,7 +93,7 @@ export const PORTFOLIO_DATA = {
     {
       title: "RDA",
       description:
-        "A leading consultant for the top companies and organizations in the United States. I lead teams of engineers to develop technologies for Alex Lee, New York Shipping Association, and Kimberly Clark.",
+        "A leading consultant working with top-performing U.S. companies and organizations. I lead teams of engineers to develop modern software solutions for Alex Lee, New York Shipping Association, and Kimberly Clark.",
       tags: ["Architect", "Consultant", "Engineer"],
       startDate: "07/15/2019",
       endDate: null,
@@ -136,7 +136,7 @@ export const PORTFOLIO_DATA = {
       guests: ["Stetson Doggett", "Trevor Mann"],
       name: "LutzTalk",
       host: "Austin Lutz",
-      description: "Stetson and Trevor join Austin to discuss the future of CoverageMap.com, how we collect and validate speed test data, the future of AI and its impact, our favorite cell phone plan perks, and much more.",
+      description: "Stetson and Trevor join Austin to discuss the future of CoverageMap.com, how we collect and validate speed test data, how AI is impacting the industry, our favorite cell phone plan perks, and much more.",
       date: "03/13/2026",
       links: [
         { name: "Spotify", icon: "spotify", link: "https://open.spotify.com/episode/5PLD2rF2fZEs2qGNnLMOJ6  " },
@@ -148,7 +148,6 @@ export const PORTFOLIO_DATA = {
     { name: "Twitter", icon: "twitter", link: "https://twitter.com/no1mann" },
     { name: "GitHub", icon: "github", link: "https://github.com/no1mann" },
     { name: "YouTube", icon: "youtube", link: "https://youtube.com/@no1mann" },
-    { name: "Reddit", icon: "reddit", link: "https://reddit.com/u/no1mann" },
     { name: "Discord", icon: "discord", username: "no1mann" },
     { name: "Email", icon: "email", link: "mailto:trevor@coveragemap.com" },
   ],

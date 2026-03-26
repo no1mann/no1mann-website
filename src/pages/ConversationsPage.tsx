@@ -40,7 +40,8 @@ export function ConversationsPage() {
                         name={`${item.title}: ${linkItem.name}`}
                         icon={linkItem.icon}
                         link={linkItem.link}
-                        className="rounded-sm border border-foreground/20 p-1.5 text-foreground/70 transition-colors hover:border-primary/60 hover:text-primary"
+                        size={26}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-foreground/20 text-foreground/70 transition-colors hover:border-primary/60 hover:text-primary"
                       />
                     ))}
                   </div>
