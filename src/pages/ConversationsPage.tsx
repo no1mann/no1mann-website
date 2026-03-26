@@ -1,6 +1,5 @@
 import { PORTFOLIO_DATA, formatConversationDate } from '@/data';
 import { EditorialSocialIconLink } from '@/components/editorial/primitives';
-import { SectionTitle } from '@/components/editorial/section-title';
 import { Badge } from '@/components/ui/badge';
 
 export function ConversationsPage() {
