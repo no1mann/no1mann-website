@@ -5,7 +5,7 @@ import { EditorialMetaBar, EditorialSocialIconLink } from '@/components/editoria
 const TABS = [
   { label: 'About', to: '/', end: true },
   { label: 'Work', to: '/work', end: true },
-  { label: 'Blog', to: '/blog', end: false },
+  { label: 'Posts', to: '/posts', end: false },
   { label: 'Conversations', to: '/conversations', end: true },
 ] as const;
 

@@ -3,7 +3,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Homepage } from './pages/Homepage';
 import { AboutPage } from './pages/AboutPage';
 import { WorkPage } from './pages/WorkPage';
-import { BlogPage } from './pages/BlogPage';
+import { PostsPage } from './pages/PostsPage';
 import { ConversationsPage } from './pages/ConversationsPage';
 
 const THEME_STORAGE_KEY = 'theme-preference';
@@ -53,9 +53,9 @@ function App() {
           <Route index element={<AboutPage workHref="/work" />} />
           <Route path="about" element={<Navigate to="/" replace />} />
           <Route path="work" element={<WorkPage />} />
-          <Route path="blog">
-            <Route index element={<BlogPage />} />
-            <Route path=":slug" element={<BlogPage />} />
+          <Route path="posts">
+            <Route index element={<PostsPage />} />
+            <Route path=":slug" element={<PostsPage />} />
           </Route>
           <Route path="conversations" element={<ConversationsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

@@ -6,13 +6,13 @@ import { Badge } from '@/components/ui/badge';
 import { loadPost } from '@/pages/posts';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-type BlogPost = (typeof PORTFOLIO_DATA.blog)[number];
+type Post = (typeof PORTFOLIO_DATA.posts)[number];
 
-function BlogListItem({ post }: { post: BlogPost }) {
+function PostListItem({ post }: { post: Post }) {
   return (
     <article className="py-8 first:pt-0 last:pb-0">
       <Link
-        to={`/blog/${post.slug}`}
+        to={`/posts/${post.slug}`}
         className="group block transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
       >
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-12">
@@ -37,7 +37,7 @@ function BlogListItem({ post }: { post: BlogPost }) {
   );
 }
 
-function BlogPostView({ post }: { post: BlogPost }) {
+function PostView({ post }: { post: Post }) {
   const [content, setContent] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -62,7 +62,7 @@ function BlogPostView({ post }: { post: BlogPost }) {
   return (
     <div className="mx-auto w-full max-w-5xl">
       <Link
-        to="/blog"
+        to="/posts"
         className="group mb-10 flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
       >
         <ArrowLeft size={14} className="transition-transform duration-200 group-hover:-translate-x-1" />
@@ -105,20 +105,20 @@ function BlogPostView({ post }: { post: BlogPost }) {
   );
 }
 
-export function BlogPage() {
-  const { blog } = PORTFOLIO_DATA;
+export function PostsPage() {
+  const { posts } = PORTFOLIO_DATA;
   const { slug } = useParams<{ slug?: string }>();
-  const activePost = slug ? blog.find((post) => post.slug === slug) : null;
+  const activePost = slug ? posts.find((post) => post.slug === slug) : null;
 
   if (activePost) {
-    return <BlogPostView post={activePost} />;
+    return <PostView post={activePost} />;
   }
 
   if (slug) {
     return (
       <div className="mx-auto w-full max-w-3xl">
         <Link
-          to="/blog"
+          to="/posts"
           className="group mb-10 flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
         >
           <ArrowLeft size={14} className="transition-transform duration-200 group-hover:-translate-x-1" />
@@ -132,8 +132,8 @@ export function BlogPage() {
   return (
     <div className="mx-auto w-full">
       <div className="grid grid-cols-1 gap-0 divide-y divide-foreground/10">
-        {blog.map((post) => (
-          <BlogListItem key={post.slug} post={post} />
+        {posts.map((post) => (
+          <PostListItem key={post.slug} post={post} />
         ))}
       </div>
     </div>

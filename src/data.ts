@@ -119,7 +119,7 @@ export const PORTFOLIO_DATA = {
     }
   ],
 
-  blog: [
+  posts: [
     {
       title: "Analysis of U.S. Cellular Coverage in H2 of 2023",
       slug: "2023-us-cellular-coverage-analysis",

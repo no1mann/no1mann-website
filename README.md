@@ -5,7 +5,7 @@ Personal website for [trevormann.org](https://trevormann.org) and [no1mann.com](
 ## What This Project Includes
 
 - Responsive personal site with light/dark theme support
-- Routing for About, Work, Blog, and Conversations pages
+- Routing for About, Work, Posts, and Conversations pages
 - Content-driven sections powered by a centralized data file
 - Static asset deployment to Cloudflare with SPA route fallback
 
@@ -44,7 +44,7 @@ Local dev server starts on Vite's default port (usually `5173`).
 ## Content and Routing
 
 - App routes are defined in `src/App.tsx`
-- Main site content (bio, projects, blog metadata, conversations, socials) is in `src/data.ts`
+- Main site content (bio, projects, posts metadata, conversations, socials) is in `src/data.ts`
 - Client-side routing is configured with a fallback to `index.html` using:
   - `assets.not_found_handling: "single-page-application"` in `wrangler.jsonc`
 
