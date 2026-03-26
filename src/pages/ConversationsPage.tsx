@@ -15,10 +15,14 @@ export function ConversationsPage() {
             <article key={item.title} className="border-b border-foreground/10 pb-8 last:border-0">
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-12">
                 <div className="shrink-0 md:w-28 md:pt-2">
-                  <Badge variant="editorial" className="mb-1 block">
-                    {item.type}
-                  </Badge>
-                  <span className="text-sm italic text-foreground/50">{formatConversationDate(item.date)}</span>
+                  <div className="flex items-start justify-between gap-3 md:block">
+                    <Badge variant="editorial" className="mb-0 block md:mb-1">
+                      {item.type}
+                    </Badge>
+                    <span className="text-right text-sm italic text-foreground/50 md:text-left">
+                      {formatConversationDate(item.date)}
+                    </span>
+                  </div>
                 </div>
                 <div className="flex-1">
                   {primaryLink ? (
