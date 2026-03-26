@@ -18,7 +18,6 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
   const { about } = PORTFOLIO_DATA;
   const [firstName, ...lastNameParts] = about.name.split(' ');
   const lastName = lastNameParts.join(' ');
-  const year = new Date().getFullYear();
 
   return (
     <div className="min-h-svh bg-background text-foreground font-body">
@@ -72,7 +71,16 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
 
         <footer className="mt-16 border-t border-foreground/20 pt-8 text-center md:mt-20">
           <p className="mx-auto max-w-3xl text-sm text-foreground/60">{about.philosophy}</p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={PORTFOLIO_DATA.repo.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-sm text-foreground/50 underline transition-colors hover:text-foreground/60"
+            >
+              Source
+            </a>
+            <span aria-hidden="true" className="h-4 w-px bg-foreground/20" />
             <p className="font-body text-sm tracking-widest text-foreground/50 lowercase">
               @{about.username}
             </p>
@@ -88,11 +96,6 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
               ))}
             </div>
           </div>
-          <p className="mt-4 font-heading text-xs uppercase tracking-widest text-foreground/40">
-            Published {year}
-            <span className="mx-2">·</span>
-            <a href={PORTFOLIO_DATA.repo.website} target="_blank" rel="noopener noreferrer" className="underline transition-colors hover:text-foreground/60">Source</a>
-          </p>
         </footer>
       </div>
     </div>
