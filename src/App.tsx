@@ -46,7 +46,7 @@ function App() {
   }, [isDark]);
 
   return (
-    <div className="min-h-screen w-full transition-colors duration-300">
+    <div className="min-h-svh w-full transition-colors duration-300">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Homepage isDark={isDark} onToggleTheme={() => setIsDark((previous) => !previous)} />}>

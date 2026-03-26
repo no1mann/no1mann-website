@@ -21,8 +21,8 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
   const year = new Date().getFullYear();
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-body">
-      <div className="relative mx-auto max-w-7xl px-4 py-12 md:px-8">
+    <div className="min-h-svh bg-background text-foreground font-body">
+      <div className="relative mx-auto flex min-h-svh max-w-7xl flex-col px-4 py-12 md:px-8">
         <EditorialThemeToggle
           isDark={isDark}
           onToggleTheme={onToggleTheme}
@@ -66,11 +66,11 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
           </div>
         </nav>
 
-        <div className="min-h-[60vh]">
+        <div className="flex-1">
           <Outlet />
         </div>
 
-        <footer className="mt-32 border-t border-foreground/20 pt-8 text-center">
+        <footer className="mt-16 border-t border-foreground/20 pt-8 text-center md:mt-20">
           <p className="mx-auto max-w-3xl text-sm text-foreground/60">{about.philosophy}</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <p className="font-body text-sm tracking-widest text-foreground/50 lowercase">
