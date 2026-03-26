@@ -84,7 +84,7 @@ export const PORTFOLIO_DATA = {
     {
       title: "Jingle Jam",
       description:
-        "Raising millions of dollars every year for multiple charities through the power of livestreaming and gaming. I help track, collect, and analyze the data to help the Jingle Jam make data-driven decisions and raise even more money.",
+        "Raising millions of dollars every year for multiple charities through the power of livestreaming and gaming. I help track, collect, and analyze the data to help the Jingle Jam make data-driven decisions and maximize effectiveness.",
       tags: ["Volunteer", "Data Analyst", "Developer"],
       startDate: "11/17/2022",
       endDate: null,
@@ -124,7 +124,7 @@ export const PORTFOLIO_DATA = {
       title: "Analysis of U.S. Cellular Coverage in H2 of 2023",
       slug: "2023-us-cellular-coverage-analysis",
       date: "06/13/2024",
-      excerpt: "A detailed analysis of the coverage and performance of the U.S. cellular networks in the second half of 2023.",
+      excerpt: "A detailed analysis of cell coverage and performance in the second half of 2023.",
       readTime: "15 min",
       author: "Trevor Mann",
     }

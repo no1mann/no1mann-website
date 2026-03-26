@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { PORTFOLIO_DATA } from '@/data';
-import { EditorialMetaBar, EditorialSocialIconLink } from '@/components/editorial/primitives';
+import { EditorialSocialIconLink, EditorialThemeToggle } from '@/components/editorial/primitives';
 
 const TABS = [
   { label: 'About', to: '/', end: true },
@@ -22,11 +22,14 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
-      <EditorialMetaBar headerText={about.headerText} isDark={isDark} onToggleTheme={onToggleTheme} />
-
-      <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 md:px-8">
+        <EditorialThemeToggle
+          isDark={isDark}
+          onToggleTheme={onToggleTheme}
+          className="absolute right-4 top-4 z-20 md:right-8 md:top-6"
+        />
         <header className="mb-2 border-foreground/20 pb-8 text-center">
-          <h1 className="mb-6 font-heading text-7xl font-bold tracking-tighter md:text-8xl">
+          <h1 className="mb-4 font-heading text-7xl font-bold tracking-tighter md:text-8xl">
             {firstName}
             {lastName ? (
               <>
@@ -36,14 +39,6 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
             ) : null}
           </h1>
           <p className="mx-auto max-w-2xl font-heading text-xl italic text-foreground/80 md:text-2xl">{about.title}</p>
-          <div className="mt-3 flex items-center justify-center gap-4">
-            <span className="font-body text-sm tracking-widest text-foreground/50 lowercase pr-2 border-r border-foreground/20">
-              @{about.username}
-            </span>
-            {PORTFOLIO_DATA.socials.map((social) => (
-              <EditorialSocialIconLink key={social.name} {...social} />
-            ))}
-          </div>
         </header>
 
         <nav className="mb-10 border-b border-foreground/20">
@@ -77,15 +72,21 @@ export function Homepage({ isDark, onToggleTheme }: HomepageProps) {
 
         <footer className="mt-32 border-t border-foreground/20 pt-8 text-center">
           <p className="mx-auto max-w-3xl text-sm text-foreground/60">{about.philosophy}</p>
-          <div className="mt-6 flex items-center justify-center gap-4">
-            {PORTFOLIO_DATA.socials.map((social) => (
-              <EditorialSocialIconLink
-                key={`footer-${social.name}`}
-                {...social}
-                size={18}
-                className="text-foreground/65 transition-colors hover:text-primary"
-              />
-            ))}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <p className="font-body text-sm tracking-widest text-foreground/50 lowercase">
+              @{about.username}
+            </p>
+            <span aria-hidden="true" className="h-4 w-px bg-foreground/20" />
+            <div className="flex items-center gap-4">
+              {PORTFOLIO_DATA.socials.map((social) => (
+                <EditorialSocialIconLink
+                  key={`footer-${social.name}`}
+                  {...social}
+                  size={18}
+                  className="text-foreground/65 transition-colors hover:text-primary"
+                />
+              ))}
+            </div>
           </div>
           <p className="mt-4 font-heading text-xs uppercase tracking-widest text-foreground/40">
             Published {year}

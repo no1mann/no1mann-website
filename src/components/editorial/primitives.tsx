@@ -198,29 +198,24 @@ export function EditorialSocialIconLink({ name, icon, link, username, size = 20,
   );
 }
 
-type EditorialMetaBarProps = {
-  headerText: string;
+type EditorialThemeToggleProps = {
   isDark: boolean;
   onToggleTheme: () => void;
+  className?: string;
 };
 
-export function EditorialMetaBar({ headerText, isDark, onToggleTheme }: EditorialMetaBarProps) {
+export function EditorialThemeToggle({ isDark, onToggleTheme, className = '' }: EditorialThemeToggleProps) {
   return (
-    <div className="flex items-center justify-between border-b border-foreground/20 px-4 py-2 text-xs uppercase tracking-widest md:px-8">
-      <span>{headerText}</span>
-      <div className="flex items-center gap-3">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={onToggleTheme}
-          aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-          title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-          className="h-7 w-7 rounded-none border border-foreground/25 p-0 hover:bg-foreground/10"
-        >
-          {isDark ? <Sun size={14} /> : <Moon size={14} />}
-        </Button>
-      </div>
-    </div>
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={onToggleTheme}
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      className={`h-8 w-8 rounded-none p-0 hover:bg-foreground/10 ${className}`.trim()}
+    >
+      {isDark ? <Sun size={15} /> : <Moon size={15} />}
+    </Button>
   );
 }
 

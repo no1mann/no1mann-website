@@ -63,7 +63,7 @@ function PostView({ post }: { post: Post }) {
     <div className="mx-auto w-full max-w-5xl">
       <Link
         to="/posts"
-        className="group mb-6 flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
+        className="group mb-4 flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
       >
         <ArrowLeft size={14} className="transition-transform duration-200 group-hover:-translate-x-1" />
         Back to Posts
@@ -121,7 +121,7 @@ export function PostsPage() {
       <div className="mx-auto w-full max-w-3xl">
         <Link
           to="/posts"
-          className="group mb-6 flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
+          className="group mb-4 flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
         >
           <ArrowLeft size={14} className="transition-transform duration-200 group-hover:-translate-x-1" />
           Back to Posts
