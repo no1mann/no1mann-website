@@ -140,7 +140,8 @@ export const PORTFOLIO_DATA = {
       date: "03/13/2026",
       links: [
         { name: "Spotify", icon: "spotify", link: "https://open.spotify.com/episode/5PLD2rF2fZEs2qGNnLMOJ6  " },
-        { name: "Apple Podcasts", icon: "apple", link: "https://podcasts.apple.com/us/podcast/lutztalk-podcast-ep-5-coveragemap-com/id1870110084?i=1000755121989" }
+        { name: "Apple Podcasts", icon: "apple", link: "https://podcasts.apple.com/us/podcast/lutztalk-podcast-ep-5-coveragemap-com/id1870110084?i=1000755121989" },
+        { name: "YouTube", icon: "youtube", link: "https://www.youtube.com/watch?v=cRBrHl3GIw0" }
       ],
     }
   ],
